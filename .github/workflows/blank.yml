@@ -26,7 +26,7 @@ jobs:
       
     steps:
       - name: varibles
-        run: echo "my name is $name. Day is $Day and Company is $company refrenece of ${{github}}"
+        run: echo "my name is $name. Day is $Day and Company is $company refrenece of $GITHUB_REF"
       - name: matrix
         run: echo ${{matrix.version}} 
       - name: test  
