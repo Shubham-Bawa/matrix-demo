@@ -18,6 +18,7 @@ jobs:
       matrix:
         version: [10]
         names: ['test1' ,'test2']
+    # if: github.repository == 'octo-org/octo-repo-prod' 
     runs-on: ubuntu-latest
     env:
       Day: monday
