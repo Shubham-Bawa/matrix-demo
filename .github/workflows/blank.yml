@@ -26,6 +26,7 @@ jobs:
       Day: monday
       name: shubham
       company: acccenture
+
       
     steps:
       - name: varibles
