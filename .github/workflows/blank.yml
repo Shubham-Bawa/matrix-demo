@@ -19,8 +19,8 @@ jobs:
         version: [10]
         names: ['test1' ,'test2']
     # condition     
-    if: ${{ github.ref == 'refs/heads/dev' }}  
-    # if: github.repository == 'Shubham-Bawa/matrix-demo6' 
+    #if: ${{ github.ref == 'refs/heads/main' }}  
+    if: github.repository == 'Shubham-Bawa/matrix-demo' 
     runs-on: ubuntu-latest
     env:
       Day: monday
