@@ -18,7 +18,8 @@ jobs:
       matrix:
         version: [10]
         names: ['test1' ,'test2']
-    if: ${{ github.ref == 'refs/heads/main' }}  
+    # condition     
+    if: ${{ github.ref == 'refs/heads/dev' }}  
     # if: github.repository == 'Shubham-Bawa/matrix-demo6' 
     runs-on: ubuntu-latest
     env:
