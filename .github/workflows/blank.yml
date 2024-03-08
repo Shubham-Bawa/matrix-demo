@@ -22,10 +22,11 @@ jobs:
     env:
       Day: monday
       name: shubham
-      company: acccenture 
+      company: acccenture
+      
     steps:
       - name: varibles
-        run: echo "my name is $name. Day is $Day and Company is $company"
+        run: echo "my name is $name. Day is $Day and Company is $company refrenece of ${{github}}"
       - name: matrix
         run: echo ${{matrix.version}} 
       - name: test  
