@@ -16,9 +16,12 @@ jobs:
   example_matrix:
     strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-20.04]
         version: [10, 12, 14]
-    runs-on: ${{ matrix.os }}
+        names: ['test1' ,'test2']
+    runs-on: ubuntu-latest
     steps:
       - name: matrix
         run: echo ${{matrix.version}} 
+      - name: test  
+        run: echo ${{matrix.names}} 
+      
