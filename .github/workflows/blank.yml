@@ -19,7 +19,13 @@ jobs:
         version: [10]
         names: ['test1' ,'test2']
     runs-on: ubuntu-latest
+    env:
+      Day: monday
+      name: shubham
+      company: acccenture 
     steps:
+      - name: varibles
+        run: echo "my name is $name. Day is $Day and Company is $company"
       - name: matrix
         run: echo ${{matrix.version}} 
       - name: test  
