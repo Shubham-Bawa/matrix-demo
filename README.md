@@ -1,136 +1,118 @@
-![][1]
+![](images/media/image1.png)
 
- {#section .ListParagraph}
+## 
 
- {#section-1 .ListParagraph}
+## 
 
-Contents {#contents .TOCHeading}
-========
+# Contents
 
-[Exercise: Installing K8s and 3]
+[Exercise: Installing K8s and 3](#exercise-installing-k8s-and)
 
-[Prerequisite 3]
+[Prerequisite 3](#prerequisite)
 
-[Scenario: **In this activity, we will cover how to install crossplane.** 3]
+[Scenario: **In this activity, we will cover how to install crossplane.** 3](#scenario-in-this-activity-we-will-cover-how-to-install-crossplane.)
 
- {#section-2 .ListParagraph}
+## 
 
- {#section-3 .ListParagraph}
+## 
 
- {#section-4 .ListParagraph}
+## 
 
- {#section-5 .ListParagraph}
+## 
 
- {#section-6 .ListParagraph}
+## 
 
- {#section-7 .ListParagraph}
+## 
 
- {#section-8 .ListParagraph}
+## 
 
- {#section-9 .ListParagraph}
+## 
 
- {#section-10 .ListParagraph}
+## 
 
- {#section-11 .ListParagraph}
+## 
 
- {#section-12 .ListParagraph}
+## 
 
-  **Version**   **Revision Date**   **Description**   **Author(s)**   **Reviewed by**   **Approved by**
-  ------------- ------------------- ----------------- --------------- ----------------- -----------------
-                                                                                        
-                                                                                        
-                                                                                         
+| **Version** | **Revision Date** | **Description** | **Author(s)** | **Reviewed by** | **Approved by** |
+| ----------- | ----------------- | --------------- | ------------- | --------------- | --------------- |
+|             |                   |                 |               |                 |                 |
+|             |                   |                 |               |                 |                 |
+|             |                   |                 |               |                 |                 |
 
- {#section-13 .ListParagraph}
+## 
 
-Exercise: Installing K8s and  {#exercise-installing-k8s-and .ListParagraph}
-=============================
+# Exercise: Installing K8s and 
 
-Prerequisite {#prerequisite .ListParagraph}
-------------
+## Prerequisite
 
-Scenario: In this activity, we will cover how to install crossplane. {#scenario-in-this-activity-we-will-cover-how-to-install-crossplane. .ListParagraph}
---------------------------------------------------------------------
+## Scenario: In this activity, we will cover how to install crossplane.
 
-+------------+---------------------------------------------------------------------------------------------------------------------+
-| **Step 1** | Install Docker engine on the vm by using this command: -                                                            |
-|            |                                                                                                                     |
-|            | sudo su -\                                                                                                          |
-|            | \                                                                                                                   |
-|            | curl -fsSL http://get.docker.**com** \| **sh**                                                                      |
-|            |                                                                                                                     |
-|            | ![][2]                                                                                                              |
-|            |                                                                                                                     |
-|            | This command is install all the  [Dependencies]                                                                     |
-|            |                                                                                                                     |
-|            | Start the docker services using this command.                                                                       |
-|            |                                                                                                                     |
-|            | systemctl start docker                                                                                              |
-|            |                                                                                                                     |
-|            | check the status for the docker.                                                                                    |
-|            |                                                                                                                     |
-|            | Run this command.                                                                                                   |
-|            |                                                                                                                     |
-|            | **systemctl status docker**                                                                                         |
-|            |                                                                                                                     |
-|            | ![][3]                                                                                                              |
-+============+=====================================================================================================================+
-| **Step 2** | Install the Kubectl                                                                                                 |
-|            |                                                                                                                     |
-|            | Download Kubectl using curl command.                                                                                |
-|            |                                                                                                                     |
-|            | curl -LO https://dl.k8s.io/release/\$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl      |
-|            |                                                                                                                     |
-|            | Install using install command.                                                                                      |
-|            |                                                                                                                     |
-|            | sudo **install** -o root -g root -m 0755 kubectl /usr/**bin**/kubectl                                               |
-+------------+---------------------------------------------------------------------------------------------------------------------+
-| **Step 3** | Install kind                                                                                                        |
-|            |                                                                                                                     |
-|            | Kind is an open-source tool for running a Kubernetes cluster locally, using Docker containers as cluster nodes.     |
-|            |                                                                                                                     |
-|            | Download the kind                                                                                                   |
-|            |                                                                                                                     |
-|            | curl -Lo ./kind \"https://kind.sigs.k8s.io/dl/v0.11.1/kind-\$(uname)-amd64\"                                        |
-|            |                                                                                                                     |
-|            | chmod +x ./**kind**\                                                                                                |
-|            | \                                                                                                                   |
-|            | sudo mv ./**kind** /usr/bin/**kind**                                                                                |
-|            |                                                                                                                     |
-|            | Install Kubernetes with kind                                                                                        |
-|            |                                                                                                                     |
-|            | sudo kind **create** **cluster**                                                                                    |
-|            |                                                                                                                     |
-|            | ![][4]                                                                                                              |
-|            |                                                                                                                     |
-|            | Run the command. To verify the Kubernetes nodes                                                                     |
-|            |                                                                                                                     |
-|            | Kubectl get nodes                                                                                                   |
-|            |                                                                                                                     |
-|            | ![][5]                                                                                                              |
-+------------+---------------------------------------------------------------------------------------------------------------------+
-| **Step 4** | Turn on the Cross-plane Helm Chart database:                                                                        |
-|            |                                                                                                                     |
-|            | helm repo **add** crossplane-**stable** https://charts.crossplane.io/**stable**                                     |
-|            |                                                                                                                     |
-|            | **helm repo update**                                                                                                |
-+------------+---------------------------------------------------------------------------------------------------------------------+
-| **Step 5** | Install Helm Chart for cross-plane.                                                                                 |
-|            |                                                                                                                     |
-|            | helm install crossplane crossplane-stable/crossplane \--**namespace** crossplane-**system** \--create-**namespace** |
-+------------+---------------------------------------------------------------------------------------------------------------------+
-| **Step 6** | **Verify Crossplane-pods **                                                                                         |
-|            |                                                                                                                     |
-|            | kubectl get pods -n crossplane-**system**                                                                           |
-|            |                                                                                                                     |
-|            | You will have output like this: -                                                                                   |
-|            |                                                                                                                     |
-|            | NAME READY STATUS RESTARTS AGE                                                                                      |
-|            |                                                                                                                     |
-|            | crossplane-d4cd8d784-b 1/1 Running 0 60s                                                                            |
-|            |                                                                                                                     |
-|            | crossplane-rbac-manager-847 1/1 Running 0                                                                           |
-+------------+---------------------------------------------------------------------------------------------------------------------+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Step 1</strong></th>
+<th><p>Install Docker engine on the vm by using this command: -</p>
+<p>sudo su -<br />
+<br />
+curl -fsSL http://get.docker.<strong>com</strong> | <strong>sh</strong></p>
+<p><img src="images/media/image2.png" style="width:5.54792in;height:0.45903in" /></p>
+<p>This command is install all the  <a href="https://www.google.com/search?sca_esv=561856720&amp;rlz=1C1GCEA_enIN1056IN1056&amp;sxsrf=AB5stBidc9vp-2_DE_xAEs80jyhT7SMRgg:1693550317545&amp;q=Dependencies&amp;spell=1&amp;sa=X&amp;ved=2ahUKEwjAnNjI5oiBAxVRHnAKHR_nDD8QkeECKAB6BAgMEAE">Dependencies</a></p>
+<p>Start the docker services using this command.</p>
+<p>systemctl start docker</p>
+<p>check the status for the docker.</p>
+<p>Run this command.</p>
+<p><strong>systemctl status docker</strong></p>
+<p><img src="images/media/image3.png" style="width:5.54792in;height:1.19861in" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Step 2</strong></td>
+<td><p>Install the Kubectl</p>
+<p>Download Kubectl using curl command.</p>
+<p>curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl</p>
+<p>Install using install command.</p>
+<p>sudo <strong>install</strong> -o root -g root -m 0755 kubectl /usr/<strong>bin</strong>/kubectl</p></td>
+</tr>
+<tr class="even">
+<td><strong>Step 3</strong></td>
+<td><p>Install kind</p>
+<p>Kind is an open-source tool for running a Kubernetes cluster locally, using Docker containers as cluster nodes.</p>
+<p>Download the kind</p>
+<p>curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.11.1/kind-$(uname)-amd64"</p>
+<p>chmod +x ./<strong>kind</strong><br />
+<br />
+sudo mv ./<strong>kind</strong> /usr/bin/<strong>kind</strong></p>
+<p>Install Kubernetes with kind</p>
+<p>sudo kind <strong>create</strong> <strong>cluster</strong></p>
+<p><img src="images/media/image4.png" style="width:5.54792in;height:1.65764in" /></p>
+<p>Run the command. To verify the Kubernetes nodes</p>
+<p>Kubectl get nodes</p>
+<p><img src="images/media/image5.png" style="width:5.34213in;height:0.43337in" /></p></td>
+</tr>
+<tr class="odd">
+<td><strong>Step 4</strong></td>
+<td><p>Turn on the Cross-plane Helm Chart database:</p>
+<p>helm repo <strong>add</strong> crossplane-<strong>stable</strong> https://charts.crossplane.io/<strong>stable</strong></p>
+<p><strong>helm repo update</strong></p></td>
+</tr>
+<tr class="even">
+<td><strong>Step 5</strong></td>
+<td><p>Install Helm Chart for cross-plane.</p>
+<p>helm install crossplane crossplane-stable/crossplane --<strong>namespace</strong> crossplane-<strong>system</strong> --create-<strong>namespace</strong></p></td>
+</tr>
+<tr class="odd">
+<td><strong>Step 6</strong></td>
+<td><p><strong>Verify Crossplane-pods </strong></p>
+<p>kubectl get pods -n crossplane-<strong>system</strong></p>
+<p>You will have output like this: -</p>
+<p>NAME READY STATUS RESTARTS AGE</p>
+<p>crossplane-d4cd8d784-b 1/1 Running 0 60s</p>
+<p>crossplane-rbac-manager-847 1/1 Running 0</p></td>
+</tr>
+</tbody>
+</table>
 
 Copyright © 2024 Accenture
 
@@ -138,15 +120,4 @@ All rights reserved.
 
 Accenture and its logo are trademarks of Accenture.
 
-![][6]
-
-  [1]: media/image1.png {width="3.004166666666667in" height="3.115972222222222in"}
-  [Exercise: Installing K8s and 3]: #exercise-installing-k8s-and
-  [Prerequisite 3]: #prerequisite
-  [Scenario: **In this activity, we will cover how to install crossplane.** 3]: #scenario-in-this-activity-we-will-cover-how-to-install-crossplane.
-  [2]: media/image2.png {width="5.547916666666667in" height="0.45902777777777776in"}
-  [Dependencies]: https://www.google.com/search?sca_esv=561856720&rlz=1C1GCEA_enIN1056IN1056&sxsrf=AB5stBidc9vp-2_DE_xAEs80jyhT7SMRgg:1693550317545&q=Dependencies&spell=1&sa=X&ved=2ahUKEwjAnNjI5oiBAxVRHnAKHR_nDD8QkeECKAB6BAgMEAE
-  [3]: media/image3.png {width="5.547916666666667in" height="1.198611111111111in"}
-  [4]: media/image4.png {width="5.547916666666667in" height="1.6576388888888889in"}
-  [5]: media/image5.png {width="5.342129265091864in" height="0.43337051618547684in"}
-  [6]: media/image6.png {width="1.37in" height="1.5in"}
+![](images/media/image6.png)
